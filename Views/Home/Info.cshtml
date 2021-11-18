@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Info";
+}
+
+@{
+    var username = ViewBag.User;
+    var efforts = ViewBag.Tries;
+    var score = ViewBag.Score;
+    var time = ViewBag.Time.ToString("mm':'ss'.'fff");
+}
+
+<div class="text-center">
+    <h1 class="display-4">User Info for @username</h1>
+    <hr />
+    <h5 class="">@efforts Attempts Taken</h5>
+    <h5 class="">Personal Best: @score/5 in @time</h5>
+</div>

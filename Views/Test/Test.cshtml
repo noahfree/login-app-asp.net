@@ -1,0 +1,56 @@
+﻿@model exploration3.Models.TestModel
+
+@{
+    ViewData["Title"] = "Test";
+}
+@{
+    var numbers = ViewBag.Numbers;
+}
+
+
+<br />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Test" asp-action="Submit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="input1" class="control-label">@numbers[0] x @numbers[1] = </label>
+                <input asp-for="input1" class="form-control" />
+                <span asp-validation-for="input1" class="text-danger"></span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label asp-for="input2" class="control-label">@numbers[2] x @numbers[3] = </label>
+                <input asp-for="input2" class="form-control" />
+                <span asp-validation-for="input2" class="text-danger"></span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label asp-for="input3" class="control-label">@numbers[4] x @numbers[5] = </label>
+                <input asp-for="input3" class="form-control" />
+                <span asp-validation-for="input3" class="text-danger"></span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label asp-for="input4" class="control-label">@numbers[6] x @numbers[7] = </label>
+                <input asp-for="input4" class="form-control" />
+                <span asp-validation-for="input4" class="text-danger"></span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label asp-for="input5" class="control-label">@numbers[8] x @numbers[9] = </label>
+                <input asp-for="input5" class="form-control" />
+                <span asp-validation-for="input5" class="text-danger"></span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,41 @@
+﻿@model exploration3.Models.TestModel
+
+@{
+    ViewData["Title"] = "Test";
+}
+@{
+    var numbers = ViewBag.Numbers;
+    var answers = ViewBag.Answers;
+    var correct = ViewBag.Correct;
+    var time = ViewBag.Time.ToString("mm':'ss'.'fff");
+}
+
+<div class="card">
+    <h3 class="card-header">Score:</h3>
+    <h5 class="card-body text-warning"> @correct / 5 </h5>
+</div>
+<hr />
+<div class="card">
+    <h3 class="card-header">Time:</h3>
+    <h5 class="card-body text-warning"> @time </h5>
+</div>
+<hr />
+<div class="card">
+    <h3 class="card-header">Answers</h3>
+    <div class="card-body">
+        <h5>1) @numbers[0] x @numbers[1] = @answers[0]</h5>
+        <h5>2) @numbers[2] x @numbers[3] = @answers[1]</h5>
+        <h5>3) @numbers[4] x @numbers[5] = @answers[2]</h5>
+        <h5>4) @numbers[6] x @numbers[7] = @answers[3]</h5>
+        <h5>5) @numbers[8] x @numbers[9] = @answers[4]</h5>
+    </div>
+</div>
+<hr />
+
+<div>
+    <a class="" asp-action="Home">Go to Home</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

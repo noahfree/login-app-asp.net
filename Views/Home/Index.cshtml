@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@{ 
+    var user = ViewBag.User;
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome @user</h1>
+    <p><a class="nav-link text-warning" asp-area="" asp-action="Start">Begin Test</a></p>
+</div>
